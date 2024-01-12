@@ -5,7 +5,7 @@ BASE_API_URL = https://api.bbil.org
 from locust import HttpUser, task, between, events
 
 # Set your base URL here
-BASE_API_URL = "https://api.bbil.org"
+BASE_API_URL = "https://api.ashiquehassan.com"
 
 @events.test_start.add_listener
 def on_test_start(environment, **kwargs):
@@ -32,4 +32,9 @@ class APIUser(HttpUser):
     def configuration_api(self):
         """ configuration api """
         self.client.get("/api/v1/configurations")
+        
+    # @task
+    # def homepage_api(self):
+    #     """ configuration api """
+    #     self.client.get("/api/v1/home")
 
