@@ -1,11 +1,10 @@
 """
-Load test for API.BBIL.ORG
-BASE_API_URL = https://api.bbil.org
+LOAD TEST SAMPLE
 """
 from locust import HttpUser, task, between, events
 
 # Set your base URL here
-BASE_API_URL = "https://api.ashiquehassan.com"
+BASE_API_URL = ""
 
 @events.test_start.add_listener
 def on_test_start(environment, **kwargs):
@@ -30,11 +29,6 @@ class APIUser(HttpUser):
 
     @task
     def configuration_api(self):
-        """ configuration api """
-        self.client.get("/api/v1/configurations")
+        """ categories api """
+        self.client.get("/product-categories")
         
-    # @task
-    # def homepage_api(self):
-    #     """ configuration api """
-    #     self.client.get("/api/v1/home")
-
